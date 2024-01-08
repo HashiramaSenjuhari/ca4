@@ -1,0 +1,54 @@
+.app
+{
+  width: 100%;
+  height: 100vh;
+  &.dark
+  {
+    background: #333;
+    color: #FFF;
+    .option
+    {
+      border: 1px solid #FFF;
+    }
+    .question
+    {
+      color: #FFF;
+    }
+    .result
+    {
+      border: 1px solid #FFF;
+    }
+  }
+  &.light
+  {
+    background: #FFF;
+    color: #333;
+    border: 1px solid #333;
+    .option
+    {
+      border: 1px solid #000;
+    }
+  }
+}
+
+@media screen and (width: 425px) {
+    .question-num {
+      font-size: 2vw;
+    }
+    .question {
+      font-size: 2rem;
+      &.highlight {
+        color: rgb(255, 0, 0);
+      }
+      &.removed {
+        color: black;
+      }
+    }
+    .option {
+      width: 35vw;
+      &:hover {
+        background: #333;
+        color: #FFF;
+      }
+    }
+  }

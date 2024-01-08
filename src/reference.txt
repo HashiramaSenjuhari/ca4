@@ -1,0 +1,39 @@
+import React, { useState } from 'react';
+import QuestionBox from './QuestionBox';
+import Result from './Result';
+import { questions } from './questions';
+
+const App = () => {
+  const [darkMode, setDarkMode] = useState(false);
+  const [currentQuestion, setCurrentQuestion] = useState(1);
+  const [answers, setAnswers] = useState([]);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
+  const handleAnswer = (isCorrect) => {
+    setAnswers([...answers, isCorrect]);
+    setCurrentQuestion(currentQuestion + 1);
+  };
+
+  return (
+    
+
+      {currentQuestion <= questions.length ? (
+        <QuestionBox
+          currentQuestion={currentQuestion}
+          totalQuestions={questions.length}
+          questions={questions}  // Pass the questions array to QuestionBox
+          handleAnswer={handleAnswer}
+        />
+      ) : (
+        <Result answers={answers} totalQuestions={questions.length} />
+      )}
+
+      {/* Add Highlight and Remove Highlight buttons here */}
+    </div>
+  );
+};
+
+export default App;
