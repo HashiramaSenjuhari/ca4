@@ -18,6 +18,19 @@
     {
       border: 1px solid #FFF;
     }
+    .question
+    {
+      padding-top: 3vw;
+      font-size: 2vw;
+      &.highlight
+      {
+        color: rgb(255, 0, 0);
+      }
+      &.removed
+      {
+        color: rgb(255, 255, 255);
+      }
+    }
   }
   &.light
   {
@@ -29,26 +42,17 @@
       border: 1px solid #000;
     }
   }
-}
-
-@media screen and (width: 425px) {
-    .question-num {
-      font-size: 2vw;
+  .question
+  {
+    padding-top: 3vw;
+    font-size: 2vw;
+    &.highlight
+    {
+      color: rgb(255, 0, 0);
     }
-    .question {
-      font-size: 2rem;
-      &.highlight {
-        color: rgb(255, 0, 0);
-      }
-      &.removed {
-        color: black;
-      }
-    }
-    .option {
-      width: 35vw;
-      &:hover {
-        background: #333;
-        color: #FFF;
-      }
+    &.removed
+    {
+      color: black;
     }
   }
+}
